@@ -24,6 +24,18 @@ export class AppComponent implements OnInit {
       'gender': new FormControl('male'),
       'hobbies': new FormArray([])
     });
+
+    // can listen on controls on the whole form or individual controls
+
+    // on every keystroke
+    // this.signupForm.valueChanges.subscribe((value) => {
+    //   console.log('value change ', value);
+    // });
+
+    //on every status change
+    this.signupForm.statusChanges.subscribe((status) => {
+      console.log('status change ', status);
+    });
   }
 
   onAddHobby() {
